@@ -7,7 +7,8 @@
     "dev": "nodemon app.js",
     "start": "node app.js",
     "lint": "npx @biomejs/biome check *.js listeners",
-    "lint:fix": "npx @biomejs/biome check --write *.js listeners"
+    "lint:fix": "npx @biomejs/biome check --write *.js listeners",
+    "update-manifest": "APP_URL=$npm_config_url node scripts/updateManifest.js"
   },
   "author": "Slack Technologies, LLC",
   "license": "MIT",
@@ -26,6 +27,7 @@
   "dependencies": {
     "@slack/bolt": "^4.1.1",
     "dotenv": "~16.4.5",
+    "google-auth-library": "^9.15.0",
     "mongoose": "^8.8.4"
   },
   "devDependencies": {

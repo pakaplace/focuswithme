@@ -37,6 +37,31 @@ const scheduleCommandCallback = async ({ command, ack, respond, client }) => {
           text: `🗓 New meeting request!\n• Organizer: <@${sender}>\n• Participants: ${userIds
             .map((id) => `<@${id}>`)
             .join(", ")}`,
+          blocks: [
+            {
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: `🗓 New meeting request!\n• Organizer: <@${sender}>\n• Participants: ${userIds
+                  .map((id) => `<@${id}>`)
+                  .join(", ")}`,
+              },
+            },
+            {
+              type: "actions",
+              elements: [
+                {
+                  type: "button",
+                  text: {
+                    type: "plain_text",
+                    text: "Connect Google Calendar",
+                  },
+                  url: "https://your-oauth-url.com", // Replace with your OAuth URL
+                  action_id: "connect_google_calendar",
+                },
+              ],
+            },
+          ],
         });
       })
     );

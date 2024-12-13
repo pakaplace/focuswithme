@@ -11,6 +11,8 @@ Key points:
 * Use respond() for ephemeral responses
 * Use client for advanced API calls
 
+How to update redirecturl locally:
+npm run update-manifest --url=https://your-ngrok-url.ngrok.io
 
 Can I still use sockets and still distribute apps to thir party teams? 
 Yes, Socket Mode works fine with distributed/public Slack apps. The distribution process is exactly the same:

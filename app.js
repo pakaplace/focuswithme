@@ -8,8 +8,19 @@ config();
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   socketMode: true, // This enables WebSocket connection
-  appToken: process.env.SLACK_APP_TOKEN, // Used to establish connection with local slack app
+  signingSecret: process.env.SLACK_SIGNING_SECRET,
+  appToken: process.env.SLACK_APP_TOKEN, //socket mode: Used to establish connection with local slack app
   logLevel: LogLevel.DEBUG,
+  customRoutes: [
+    {
+      path: "/health-check",
+      method: ["GET"],
+      handler: (req, res) => {
+        res.writeHead(200);
+        res.end("Health check information goes here!");
+      },
+    },
+  ],
 });
 
 /** Register Listeners */
