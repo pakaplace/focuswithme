@@ -1,5 +1,5 @@
-const { sampleCommandCallback } = require("./sample-command");
+const { scheduleCommandCallback } = require("./scheduleCommand");
 
 module.exports.register = (app) => {
-  app.command("/schedule", sampleCommandCallback);
+  app.command("/schedule", scheduleCommandCallback);
 };

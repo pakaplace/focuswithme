@@ -1,9 +1,10 @@
 {
-  "name": "bolt-js-starter-template",
+  "name": "focus-with-me",
   "version": "1.0.0",
   "description": "A scaffold template for Slack apps",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "start": "node app.js",
     "lint": "npx @biomejs/biome check *.js listeners",
     "lint:fix": "npx @biomejs/biome check --write *.js listeners"
@@ -24,9 +25,11 @@
   },
   "dependencies": {
     "@slack/bolt": "^4.1.1",
-    "dotenv": "~16.4.5"
+    "dotenv": "~16.4.5",
+    "mongoose": "^8.8.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4"
+    "@biomejs/biome": "^1.9.4",
+    "nodemon": "^3.1.9"
   }
 }

@@ -1,0 +1,28 @@
+Listeners
+* messages - listen for speicifc text in slack messages
+* events - listen for events in slack like app home opened
+* commands - listen for commands in slack like /schedule
+* actions - listen for actions in slack like button clicks
+
+Key points:
+* All listeners should be async
+* Always await ack() for interactive components - tells slack to expect a response, must respond in 3s
+* Use say() for channel messages
+* Use respond() for ephemeral responses
+* Use client for advanced API calls
+
+
+Can I still use sockets and still distribute apps to thir party teams? 
+Yes, Socket Mode works fine with distributed/public Slack apps. The distribution process is exactly the same:
+1. Submit app for review
+2. Get approved
+3. Other teams install via OAuth
+Each installation still:
+* Gets its own bot token
+* Works with the same permissions
+* Can use all features
+The only limitation is on YOUR side:
+* 1 WebSocket connection per app token
+* Need to handle multiple team's events through that connection
+* Might need multiple instances for high load
+
